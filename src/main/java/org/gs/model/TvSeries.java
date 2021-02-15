@@ -1,8 +1,11 @@
 package org.gs.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.net.URL;
 import java.util.Set;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TvSeries {
 
   private Long id;

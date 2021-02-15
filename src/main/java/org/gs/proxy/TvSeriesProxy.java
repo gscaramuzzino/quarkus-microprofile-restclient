@@ -9,11 +9,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-@Path("/singlesearch/shows")
+@Path("/singlesearch")
 @Produces(MediaType.APPLICATION_JSON)
-@RegisterRestClient(baseUri = "http://api.tvmaze.com/")
+@RegisterRestClient
 public interface TvSeriesProxy {
 
   @GET
+  @Path("/shows")
   TvSeries get(@QueryParam("q") String query);
 }
