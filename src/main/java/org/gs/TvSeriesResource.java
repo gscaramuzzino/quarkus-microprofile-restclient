@@ -6,9 +6,7 @@ import org.gs.model.TvSeries;
 import org.gs.proxy.EpisodeProxy;
 import org.gs.proxy.TvSeriesProxy;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.lang.reflect.Array;
@@ -27,8 +25,8 @@ public class TvSeriesResource {
 
   @GET
   @Produces(MediaType.APPLICATION_JSON)
-  public Response get() {
-    TvSeries tvSeries = proxy.get("game of thrones");
+  public Response get(@QueryParam("title") String title) {
+    TvSeries tvSeries = proxy.get(title);
     List<Episode> episodes = episodeProxy.get(tvSeries.getId());
     tvSeriesList.add(tvSeries);
     return Response.ok(episodes).build();
