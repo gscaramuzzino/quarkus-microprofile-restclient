@@ -1,7 +1,9 @@
 package org.gs;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.gs.model.Episode;
 import org.gs.model.TvSeries;
+import org.gs.proxy.EpisodeProxy;
 import org.gs.proxy.TvSeriesProxy;
 
 import javax.ws.rs.GET;
@@ -18,6 +20,8 @@ import java.util.List;
 public class TvSeriesResource {
 
   @RestClient TvSeriesProxy proxy;
+  @RestClient
+  EpisodeProxy episodeProxy;
 
   private List<TvSeries> tvSeriesList = new ArrayList<>();
 
@@ -25,7 +29,8 @@ public class TvSeriesResource {
   @Produces(MediaType.APPLICATION_JSON)
   public Response get() {
     TvSeries tvSeries = proxy.get("game of thrones");
+    List<Episode> episodes = episodeProxy.get(tvSeries.getId());
     tvSeriesList.add(tvSeries);
-    return Response.ok(tvSeriesList).build();
+    return Response.ok(episodes).build();
   }
 }
