@@ -1,4 +1,4 @@
-Eclipse Microprofile RestClient with Quarkus
+Microprofile RestClient with Quarkus
 =======
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
