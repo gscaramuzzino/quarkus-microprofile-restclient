@@ -3,7 +3,7 @@ Microprofile RestClient with Quarkus
 
 YouTube video:
 
-[![Alt text](https://i9.ytimg.com/vi_webp/8d8GSRZzdsA/mqdefault.webp?time=1614934500000&sqp=COTjh4IG&rs=AOn4CLDFtf5d8QQDZJRYa-H6XCAlzcYTCw)](https://youtu.be/8d8GSRZzdsA "Click to play on Youtube.com")
+[![Alt text](https://user-images.githubusercontent.com/8536722/110162186-aa6eab00-7dee-11eb-8289-bd3cf6c13a11.png)](https://youtu.be/8d8GSRZzdsA "Click to play on Youtube.com")
 
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
